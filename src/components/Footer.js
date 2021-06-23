@@ -24,10 +24,10 @@ function Footer() {
     return (
         <BottomNavigation className={classes.root}>
             <Typography align="center" variant="h5">
-                Idea Credit: <Link href="https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it" className={classes.link}>This</Link> stackoverflow question
+                Idea Credit: <Link href="https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it" target="blank" className={classes.link}>This</Link> stackoverflow question
             </Typography>
             <Typography align="center" variant="h5">
-                Made with ❤️ by <Link href="https://github.com/CITIZENDOT" className={classes.link}>CITIZENDOT</Link>
+                Made with ❤️ by <Link href="https://github.com/CITIZENDOT" target="blank" className={classes.link}>CITIZENDOT</Link>
             </Typography>
         </BottomNavigation>
     );

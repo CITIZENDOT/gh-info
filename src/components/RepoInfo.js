@@ -31,13 +31,11 @@ function RepoInfo({ repoURL }) {
     const owner = React.useRef(null), repoName = React.useRef(null);
 
     const fetchData = async () => {
-        try {
+        if (parse(repoURL)) {
             [owner.current, repoName.current] = parse(repoURL);
             setError(null);
-        } catch (err) {
-            console.log("[ParseError]: ", err);
-            setError(err);
-            return;
+        } else {
+            setError("ParseError");
         }
 
         try {
