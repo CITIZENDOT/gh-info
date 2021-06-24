@@ -30,7 +30,7 @@ function App() {
 	return (
 		<ThemeProvider theme={muiTheme}>
 			<CssBaseline />
-			<Grid container spacing={0} justify="center" style={{ minHeight: "100vh" }}>
+			<Grid container spacing={0} justify="center" style={{ minHeight: "90vh" }}>
 				<Grid container item xs={12}>
 					<Grid item xs={12}>
 						<Header toggle={toggleTheme} />

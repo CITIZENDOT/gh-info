@@ -5,9 +5,9 @@ import makeStyles from "@material-ui/styles/makeStyles";
 
 const useStyles = makeStyles(theme => ({
     root: {
+        minHeight: 50,
         display: "flex",
         width: '100%',
-        bottom: 10,
         flexDirection: "column",
         justifyContent: "flex-end"
     },
