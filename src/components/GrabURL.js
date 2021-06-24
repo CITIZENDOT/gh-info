@@ -15,7 +15,7 @@ function GrabURL({ setRepoURL }) {
     const classes = useStyles();
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRepoURL(e.target.repoURL.value);
+        setRepoURL(e.target.repoURL.value.replace(/\/$/, ""));
     }
 
     return (

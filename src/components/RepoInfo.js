@@ -31,9 +31,6 @@ function RepoInfo({ repoURL, setRepoURL }) {
     const owner = React.useRef(null), repoName = React.useRef(null);
 
     const fetchData = async () => {
-        if (repoURL.slice(-1) === "/") {
-            setRepoURL(repoURL.slice(0, -1));
-        }
         if (parse(repoURL)) {
             [owner.current, repoName.current] = parse(repoURL);
             setError(null);
