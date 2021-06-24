@@ -30,7 +30,7 @@ function App() {
 	return (
 		<ThemeProvider theme={muiTheme}>
 			<CssBaseline />
-			<Grid container spacing={0} justify="center">
+			<Grid container spacing={0} justify="center" style={{ minHeight: "100vh" }}>
 				<Grid container item xs={12}>
 					<Grid item xs={12}>
 						<Header toggle={toggleTheme} />
@@ -43,16 +43,11 @@ function App() {
 				</Grid>
 				<Grid container item xs={11} md={10} lg={9}>
 					<Grid item xs={12}>
-						{repoURL ? <RepoInfo repoURL={repoURL} /> : null}
-					</Grid>
-				</Grid>
-				<Grid container item xs={12}>
-					<Grid item xs={12}>
-						<br />
-						<Footer />
+						{repoURL ? <RepoInfo repoURL={repoURL} setRepoURL={setRepoURL} /> : null}
 					</Grid>
 				</Grid>
 			</Grid>
+			<Footer />
 		</ThemeProvider>
 	);
 }

@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function RepoInfo({ repoURL }) {
+function RepoInfo({ repoURL, setRepoURL }) {
     const [isLoading, setLoading] = React.useState(true);
     const [repoData, setRepoData] = React.useState("");
     const [error, setError] = React.useState("");
@@ -31,6 +31,9 @@ function RepoInfo({ repoURL }) {
     const owner = React.useRef(null), repoName = React.useRef(null);
 
     const fetchData = async () => {
+        if (repoURL.slice(-1) === "/") {
+            setRepoURL(repoURL.slice(0, -1));
+        }
         if (parse(repoURL)) {
             [owner.current, repoName.current] = parse(repoURL);
             setError(null);
@@ -38,16 +41,15 @@ function RepoInfo({ repoURL }) {
             setError("ParseError");
         }
 
-        try {
-            const response = (await axios.get(`https://api.github.com/repos/${owner.current}/${repoName.current}`)).data;
-            setRepoData(response);
-            console.log("[Success]: ", response);
-            console.log("[Creds]: ", [owner.current, repoName.current]);
-            setLoading(false);
-        } catch (err) {
-            setError(err);
-            console.log("[Error]: ", err);
-            setLoading(false);
+        if (!error) {
+            try {
+                const response = (await axios.get(`https://api.github.com/repos/${owner.current}/${repoName.current}`)).data;
+                setRepoData(response);
+                setLoading(false);
+            } catch (err) {
+                setError(err);
+                setLoading(false);
+            }
         }
     };
 
@@ -97,7 +99,7 @@ function RepoInfo({ repoURL }) {
                 <Typography variant="h6">{`Most used Langauge: ${repoData.language}`}</Typography>
                 {(repoData.license != null) ?
                     (<Typography variant="h6">
-                        <Link href={`https://choosealicense.com/licenses/${repoData.license.key}`} target="_blank">
+                        <Link href={`https://choosealicense.com/licenses/${repoData.license.key}`} target="_blank" className={classes.link}>
                             {repoData.license.name}
                         </Link>
                     </Typography>) :

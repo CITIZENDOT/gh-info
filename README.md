@@ -1,3 +1,7 @@
+<a href="http://www.wtfpl.net/"><img
+       src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
+       width="80" height="15" alt="WTFPL" /></a>
+
 This displays github repository size and some basic information about the repo.
 The reason this project exist is, due to high engagement of [this](https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it) stackoverflow question.
 
