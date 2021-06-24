@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
         position: 'fixed',
-        bottom: 20,
+        bottom: 10,
         flexDirection: "column"
     },
     link: {
@@ -23,10 +23,10 @@ function Footer() {
 
     return (
         <BottomNavigation className={classes.root}>
-            <Typography align="center" variant="h5">
+            <Typography align="center" variant="caption">
                 Idea Credit: <Link href="https://stackoverflow.com/questions/8646517/how-can-i-see-the-size-of-a-github-repository-before-cloning-it" target="blank" className={classes.link}>This</Link> stackoverflow question
             </Typography>
-            <Typography align="center" variant="h5">
+            <Typography align="center" variant="caption">
                 Made with ❤️ by <Link href="https://github.com/CITIZENDOT" target="blank" className={classes.link}>CITIZENDOT</Link>
             </Typography>
         </BottomNavigation>

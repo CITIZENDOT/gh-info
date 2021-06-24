@@ -11,3 +11,9 @@ Somehow, I visited that question and thought why not make something for this.
 - Repo creation date
 - Most used Language
 - Licence information
+
+### Contributions
+
+I promise to approve the PR first, and only then review it. 😉️
+
+<b>PS: </b> Suggest some crazy name for this. I couldn't name this better.
